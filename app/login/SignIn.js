@@ -190,7 +190,7 @@ export default function SignIn() {
             </Button>
           ) : (
             <Button
-              className="font-semibold text-sm text-white transition-colors duration-300 bg-[#00DDB8]"
+              className="font-semibold text-sm text-white transition-colors duration-300 bg-black"
               onClick={(event) => HandleLogin(login, event, SIGNIN)}
             >
               Login

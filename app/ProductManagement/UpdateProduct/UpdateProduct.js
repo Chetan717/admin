@@ -192,6 +192,17 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
     setProductData({ ...productData, image: images });
   };
 
+  const img = [
+    { value: "Air Conditioner", name: "Air Conditioner" },
+    { value: "Laptops", name: "Laptops" },
+    { value: "Televisions", name: "Televisions" },
+    { value: "Camera", name: "Camera" },
+    { value: "Earbuds", name: "Earbuds" },
+    { value: "Printer", name: "Printer" },
+    { value: "Personal Care", name: "Personal Care" },
+    { value: "Home Appliances", name: "Home Appliances" },
+  ];
+
   return (
     <>
       <div className="flex flex-wrap gap-3">
@@ -370,22 +381,20 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                         className="block py-2.5  w-full text-sm text-black font-bold bg-transparent rounded-lg border-2 p-2 border-black appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:border-red-500 peer"
                       >
                         <option value="">Select Type</option>
-                        <option value="soil">soil</option>
-                        <option value="plant">plant</option>
-                        <option value="insectiside">insectiside</option>
-                        <option value="pesticide">pesticide</option>
-                        <option value="fertilizer">fertilizer</option>
-                        <option value="fungicide">fungicide</option>
-
-                        <option value="herbicide">herbicide</option>
-                        <option value="organic">organic</option>
-                        <option value="cow">cow</option>
+                        {img?.map((i) => {
+                          return (
+                            <>
+                              <option value={i?.value}>{i?.name}</option>
+                            </>
+                          );
+                        })}
                       </select>
-                      {/* {validationErrors.type && (
+
+                      {validationErrors.type && (
                         <p className="text-red-500 text-xs mt-1">
                           {validationErrors.type}
                         </p>
-                      )} */}
+                      )}
                     </div>
 
                     <div>
@@ -409,7 +418,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                         </p>
                       )} */}
                     </div>
-
+{/* 
                     <div>
                       <label
                         className="block text-gray-700 text-sm font-bold mb-2"
@@ -425,12 +434,8 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                         autoComplete="off"
                         className="block py-2.5  w-full text-sm text-black font-bold bg-transparent rounded-lg border-2 p-2 border-black appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:border-red-500 peer"
                       />
-                      {/* {validationErrors.praman && (
-                        <p className="text-red-500 text-xs mt-1">
-                          {validationErrors.praman}
-                        </p>
-                      )} */}
-                    </div>
+                   
+                    </div> */}
                   </div>
                   {/* 
               <div>
@@ -491,7 +496,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
 
                     <div className="col-span-2">
                       <label className="block text-gray-700 text-sm font-bold mb-2">
-                        Quantity (kg/LTR):
+                        Quantity :
                       </label>
                       {productData?.Quantity?.map((Quantity, index) => (
                         <div key={index} className="flex items-center mb-2">
@@ -550,7 +555,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                         Add +
                       </Button>
                     </div>
-
+{/* 
                     <div className="col-span-2">
                       <label className="block text-gray-700 text-sm font-bold mb-2">
                         Advantages:
@@ -580,7 +585,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                       >
                         Add +
                       </Button>
-                    </div>
+                    </div> */}
 
                     <div className="col-span-2">
                       <label className="block text-gray-700 text-sm font-bold mb-2">
